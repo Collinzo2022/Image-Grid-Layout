@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--Character encoding-->
+   <meta charset="UTF-8">
+   <!--Responsive design-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Create a Image-Grid-Layout using HTML and CSS">
+   <!--Author of the webpage-->
+   <meta name="Author" content="Efuetanu Collins Avwerosuo">
+   <!--SEO Keywords-->
+   <meta name="keywords" content="Frontend Project, HTML, CSS,Roadmap.sh">
+   <title>Image-Grid-Layout</title>
+   <!--CSS Styling-->
+   <style>
+    *, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+
+*body {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+
+.pics-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(300px, auto);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+}
+
+.pics-container > div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+}
+
+
+.pics-container img {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.mountain {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.nightcloud {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.outdoorview {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.frontpic {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3 ;
+}
+
+.beachview {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.pics-container img {
+  animation: faeIn 0.5s ease-in;
+}
+
+@media  screen and (max-width: 1024px) {
+  .pics-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .outdoorview {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .whiteroom {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .frontpic {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .beachview {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+}
+
+@media  screen and (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .pics-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pics-container > div {
+    grid-column: 1 / 2;
+  }
+
+  .mountain {grid-row: 1 / 2;}
+  .nightcloud {grid-row: 2 / 3;}
+  .outdoorview {grid-row: 3 / 4;}
+  .whiteroom {grid-row: 4 / 5;}
+  .frontpic {grid-row: 5 / 6;}
+  .beachview {grid-row: 6 / 7;}
+
+  .pics-container > div {
+    height: 250px;
+  }
+
+}
+
+.pics-container > div:focus-within {
+  outline: 3px solid #007bff;
+  outline-offset: 3px;
+}
+   </style>
+   <link rel="stylesheet" href="/Image-Grid-Layout/Image-Grid-Layout/Image-grid-layout.css">
+</head>
+<body>
+  <div class="pics-container">
+    <div class="mountain">
+      <img src="/Image-Grid-Layout/Image-Grid-Layout/images/mountains.jpg" alt="a mountain with dews" class="mountain-pic" loading="lazy">
+    </div>
+    <div class="nightcloud">
+      <img src="/Image-Grid-Layout/Image-Grid-Layout/images/night-cloud.jpg"  class="nightcloud-pic" alt ="night cloud" loading="lazy" >
+    </div>
+   <div class="outdoorview">
+    <img src="/Image-Grid-Layout/Image-Grid-Layout/images/outdoorview.jpg" class="outdoorview-pic" alt="outdoorview-pic" loading="lazy">
+  </div>
+    <div class="whiteroom">
+      <img src="/Image-Grid-Layout/Image-Grid-Layout/images/white-room.jpg" class="whiteroom-pic" alt="whiteroom-pic" loading="lazy">
+    </div>
+    <div class="frontpic">
+      <img src="/Image-Grid-Layout/Image-Grid-Layout/images/front0fahouse.jpg"  class="front-pic" alt="frontdoorview" loading="lazy">
+    </div>
+    <div class="beachview">
+      <img src="/Image-Grid-Layout/Image-Grid-Layout/images/aliburhan-s-7dLjI5vWMJs-unsplash.jpg" class="beachview-pic" alt="beachview" loading="lazy">
+    </div>
+  </div>
+
+</body>
+</html>
